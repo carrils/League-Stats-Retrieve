@@ -4,7 +4,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
+/*
+TODO:
+move cool hacky tricks.java to the repo you made for it on github
+ */
 
 public class Main extends Application {
 

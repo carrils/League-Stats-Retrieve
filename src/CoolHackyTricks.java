@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class HowToStructure {
+public class CoolHackyTricks {
     public static void main(String[] args) {
         System.out.println("Hello Java");
 

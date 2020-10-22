@@ -13,6 +13,7 @@ public class LayoutController {
     @FXML
     protected Button winrateLookupButton;
 
+
     public LayoutController() {
         //empty for now
     }
