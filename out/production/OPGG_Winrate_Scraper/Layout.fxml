@@ -14,7 +14,6 @@
         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
                 <TextField id="userNameInput" />
-                <Button id="winrateLookupButton" mnemonicParsing="false" onAction="#handleSubmission" text="Button" />
             </children>
         </HBox>
     </center>
