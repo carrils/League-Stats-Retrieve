@@ -7,9 +7,6 @@
 <?import javafx.scene.layout.HBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
-    <bottom>
-        <TextArea id="outputDisplayArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-    </bottom>
     <center>
         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
@@ -17,4 +14,7 @@
             </children>
         </HBox>
     </center>
+    <bottom>
+        <TextArea id="outputDisplayArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+    </bottom>
 </BorderPane>
