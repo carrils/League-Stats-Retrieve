@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LayoutController">
     <top>
         <MenuBar nodeOrientation="RIGHT_TO_LEFT" BorderPane.alignment="TOP_RIGHT">
             <menus>
@@ -32,7 +32,7 @@
                 </Label>
                 <TextField id="summonerName" fx:id="summonerName" layoutX="120.0" layoutY="23.0" promptText="enter summoner name" />
 
-                <Button id="winrateLookupButton" fx:id="winrateLookupButton" layoutX="332.0" layoutY="98.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="131.0" text="Get stats" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                <Button id="winrateLookupButton" fx:id="winrateLookupButton" layoutX="332.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleSubmission" prefHeight="38.0" prefWidth="131.0" text="Get stats" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
             </AnchorPane>
 
             <AnchorPane disable="true" minHeight="0.0" minWidth="0.0" prefHeight="341.0" prefWidth="285.0" style="-fx-background-color: #bccde0; -fx-border-color: grey;">
