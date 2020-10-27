@@ -35,7 +35,7 @@
                 <Button id="winrateLookupButton" fx:id="winrateLookupButton" layoutX="332.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleSubmission" prefHeight="38.0" prefWidth="131.0" text="Get stats" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
             </AnchorPane>
 
-            <AnchorPane disable="true" minHeight="0.0" minWidth="0.0" prefHeight="341.0" prefWidth="285.0" style="-fx-background-color: #bccde0; -fx-border-color: grey;">
+            <AnchorPane disable="true" minHeight="0.0" minWidth="0.0" prefHeight="341.0" prefWidth="285.0" style="-fx-background-color: #2b4173; -fx-border-color: grey;">
                 <TextArea id="outputDisplayArea" fx:id="outputDisplayArea" disable="true" editable="false" layoutX="6.0" layoutY="5.0" prefHeight="154.0" prefWidth="269.0" text="[Summoner information displayed here]" wrapText="true">
                 </TextArea>
             </AnchorPane>

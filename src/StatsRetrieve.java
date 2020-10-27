@@ -24,6 +24,7 @@ public class StatsRetrieve {
         Document response = Jsoup.parse(connection1, urlSumID, Parser.xmlParser());//returns sane html as Document
         //create url to get summoner stats
         encryptedSummonerID = getEncryptedSummonerID(response);
+        //System.out.println(encryptedSummonerID);
         String urlStats = creds.getUrlStats() + encryptedSummonerID;
         String connection2 = callAPI(urlStats);
         Document response2 = Jsoup.parse(connection2, urlStats, Parser.xmlParser()); //xml parser might need to be looked into
@@ -32,7 +33,23 @@ public class StatsRetrieve {
 
     private String getEncryptedSummonerID(Document response) {
         //this parses the document response (sane html) and assigns local variables the value caught with a css selector
-        return response.select("id").text();
+        //StringBuilder e = new StringBuilder();
+        String encryptedSummonerID = "Default encrypted summoner ID";
+        String[] responseValues = response.text().substring(1, response.text().length() - 1).split(",");
+//        for(String value : responseValues){
+//            System.out.println(value);
+//        }
+        for(int i = 0; i < responseValues.length; i ++){
+            String [] tempStringArray = responseValues[i].replaceAll("\"", "").split(":");
+//            for(String x : tempStringArray){
+//                System.out.println(x);
+//                //System.out.println("-------");
+//            }
+            if(tempStringArray[0].equals("id")){
+                encryptedSummonerID = tempStringArray[1];
+            }
+        }
+        return encryptedSummonerID;
     }
 
     private void statParse(Document response) {
@@ -51,6 +68,7 @@ public class StatsRetrieve {
         //Stringbuilder is just a mutable string
         //thus this method only appends to 'data' everything in 'input'
         StringBuilder data = new StringBuilder();
+        System.out.println(urlString);//debugging
         try {
             URL url = new URL(urlString);
             BufferedReader input = new BufferedReader(

@@ -39,7 +39,8 @@ public class Credentials {
         //Extract URL, here we must differentiate between WHICH urls we need. can probably just make two!
         urlSumID = doc.select("urlSumID").text();
         urlStats = doc.select("urlStats").text();
-        System.out.println("Connection Successful:\n");
+        apiKey = doc.select("apiKey").text();
+        System.out.println("Connection Successful:");
     }
 
     private static void assembleSummonerIDURL() {
@@ -47,15 +48,23 @@ public class Credentials {
         //https://_region_.api.riotgames.com/lol/summoner/v4/summoners/by-name/
         String[] urlArray = urlSumID.split("_region_");
         urlArray[0] += region;
+        //debugging block
+        //System.out.println("assemble summoner ID:");
         //apikey dependent on verifyXML method to be assigned a value
-        urlSumID = urlArray.toString() + summonerName + "?api_key=" + apiKey;
+        urlSumID = urlArray[0] + urlArray[1] + summonerName + "?api_key=" + apiKey;
+        //debugging block
+        //System.out.println(urlSumID + '\n');
     }
     private static void assembleStatsURL() {
         //assembles the url to get stats of summoner
         //https://_region_.api.riotgames.com/lol/league/v4/entries/by-summoner/
-        String[] urlArray = urlSumID.split("_region_");
+        String[] urlArray = urlStats.split("_region_");
         urlArray[0] += region;
-        urlStats = urlArray.toString();//add on encrypted ID in the statsretrieve class
+        //debugging block
+        //System.out.println("assemble stats url:");
+        urlStats = urlArray[0] + urlArray[1];//add on encrypted ID in the statsretrieve class
+        //debugging block
+        //System.out.println(urlStats + '\n');
     }
 
     //Primary method for assembling data
