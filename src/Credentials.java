@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Credentials {
-    private static String urlSumID, urlStats, apiKey, summonerName, region;
+    private static String urlSumID, apiKey, urlStats, summonerName, region;
+    //public static String apiKey;
 
     //constructor for credentials class
     public Credentials(ArrayList<String> inputs) {
@@ -84,5 +85,11 @@ public class Credentials {
         //invoke populate because otherwise this can be a null
         populate();
         return urlStats;
+    }
+
+    public static String getApiKey(){
+        //invoke populate because otherwise this can be a null
+        //populate();
+        return apiKey;
     }
 }
