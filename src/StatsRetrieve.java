@@ -69,8 +69,8 @@ public class StatsRetrieve {
                 losses = tempStringArray[1];
             }
 
-            System.out.println(summonerName + ", wins:" + wins + ", losses:" + losses + ", " + tier + " " + rank);
         }
+        System.out.println(summonerName + ", wins:" + wins + ", losses:" + losses + ", " + tier + " " + rank);
     }
 
     public String generateReport() {

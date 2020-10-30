@@ -5,7 +5,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
+    /*
+        ToDo:
+        - implement other regions
+        - implement drop down to pick from regions
+     */
     public static void main(String[] args) {
         //Create scraper which contains functions needed to interact with GUI
         launch(args);
