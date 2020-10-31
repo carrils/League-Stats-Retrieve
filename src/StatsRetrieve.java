@@ -70,12 +70,17 @@ public class StatsRetrieve {
             }
 
         }
+        //optional troubleshooting output
         System.out.println(summonerName + ", wins:" + wins + ", losses:" + losses + ", " + tier + " " + rank);
     }
 
     public String generateReport() {
         //this will return all the fields caught in updateCurrentValues in a sentence
-        return summonerName + ", wins:" + wins + ", losses:" + losses + ", " + tier + " " + rank;
+        double winNum = Double.valueOf(wins);
+        double lossNum = Double.valueOf(losses);
+        double winratio = (winNum /(winNum + lossNum))  * 100;
+
+        return "[" + summonerName + "]\n" + "     - Wins:" + wins + "\n     - Losses:" + losses + "\n     - Rank: " + tier + " " + rank+"\n     - Win Ratio: " + Math.round(winratio) + "%";
     }
 
     public String callAPI(String urlString) {

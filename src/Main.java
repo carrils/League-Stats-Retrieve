@@ -7,8 +7,8 @@ import javafx.stage.Stage;
 public class Main extends Application {
     /*
         ToDo:
-        - implement other regions
-        - implement drop down to pick from regions
+        - make a .exe for this
+        - get riot key that wont expire in 24 hours lol
      */
     public static void main(String[] args) {
         //Create scraper which contains functions needed to interact with GUI

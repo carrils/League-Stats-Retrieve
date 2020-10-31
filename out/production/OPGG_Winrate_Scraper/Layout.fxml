@@ -4,39 +4,66 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LayoutController">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="LayoutController">
     <top>
         <MenuBar nodeOrientation="RIGHT_TO_LEFT" BorderPane.alignment="TOP_RIGHT">
             <menus>
                 <Menu mnemonicParsing="false" text="Info">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem mnemonicParsing="false" text="About"/>
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
     </top>
     <center>
-        <SplitPane cacheShape="false" centerShape="false" dividerPositions="0.5" prefHeight="343.0" prefWidth="467.0" scaleShape="false">
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="324.0" style="-fx-background-color: #5383e8; -fx-border-color: grey;">
-                <Label layoutX="11.0" layoutY="68.0" prefHeight="21.0" prefWidth="89.0" text="Region: " textFill="WHITE">
+        <SplitPane cacheShape="false" centerShape="false" dividerPositions="0.5" prefHeight="343.0" prefWidth="467.0"
+                   scaleShape="false">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="324.0"
+                        style="-fx-background-color: #5383e8; -fx-border-color: grey;">
+                <Label layoutX="11.0" layoutY="68.0" prefHeight="21.0" prefWidth="89.0" text="Region: "
+                       textFill="WHITE">
                     <font>
-                        <Font name="Helvetica" size="18.0" />
+                        <Font name="Helvetica" size="18.0"/>
                     </font>
                 </Label>
-                <TextField id="region" fx:id="region" layoutX="120.0" layoutY="66.0" promptText="NA" />
-                <Label layoutX="10.0" layoutY="27.0" prefHeight="23.0" prefWidth="106.0" text="Summoner:" textFill="WHITE">
+                <ChoiceBox fx:id="regionBox" layoutX="131.0" layoutY="65.0" prefWidth="150.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="NA"/>
+                            <String fx:value="RU"/>
+                            <String fx:value="BR"/>
+                            <String fx:value="KR"/>
+                            <String fx:value="JP"/>
+                            <String fx:value="EUN"/>
+                            <String fx:value="EUW"/>
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+                <Label layoutX="10.0" layoutY="27.0" prefHeight="23.0" prefWidth="106.0" text="Summoner:"
+                       textFill="WHITE">
                     <font>
-                        <Font size="18.0" />
+                        <Font size="18.0"/>
                     </font>
                 </Label>
-                <TextField id="summonerName" fx:id="summonerName" layoutX="120.0" layoutY="23.0" promptText="enter summoner name" />
+                <TextField id="summonerName" fx:id="summonerName" layoutX="120.0" layoutY="23.0"
+                           promptText="enter summoner name"/>
 
-                <Button id="winrateLookupButton" fx:id="winrateLookupButton" layoutX="332.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleSubmission" prefHeight="38.0" prefWidth="131.0" text="Get stats" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                <Button id="winrateLookupButton" fx:id="winrateLookupButton" layoutX="332.0" layoutY="98.0"
+                        mnemonicParsing="false" onAction="#handleSubmission" prefHeight="38.0" prefWidth="131.0"
+                        text="Get stats" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0"
+                        AnchorPane.rightAnchor="5.0"/>
             </AnchorPane>
 
-            <AnchorPane disable="true" minHeight="0.0" minWidth="0.0" prefHeight="341.0" prefWidth="285.0" style="-fx-background-color: #2b4173; -fx-border-color: grey;">
-                <TextArea id="outputDisplayArea" fx:id="outputDisplayArea" disable="true" editable="false" layoutX="6.0" layoutY="5.0" prefHeight="154.0" prefWidth="269.0" text="[Summoner information displayed here]" wrapText="true">
+            <AnchorPane disable="true" minHeight="0.0" minWidth="0.0" prefHeight="341.0" prefWidth="285.0"
+                        style="-fx-background-color: #2b4173; -fx-border-color: grey;">
+                <TextArea id="outputDisplayArea" fx:id="outputDisplayArea" disable="true" editable="false" layoutX="6.0"
+                          layoutY="5.0" prefHeight="154.0" prefWidth="269.0"
+                          text="[Summoner information displayed here]" wrapText="true">
                 </TextArea>
             </AnchorPane>
         </SplitPane>
@@ -44,8 +71,11 @@
 
     <bottom>
         <AnchorPane prefHeight="57.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-            <AnchorPane opacity="0.86" prefHeight="57.0" prefWidth="604.0" style="-fx-background-color: #232f46;" BorderPane.alignment="CENTER">
-                <Text fill="#6599dd" layoutX="8.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="StatsRetrieve isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc." wrappingWidth="589.0" />
+            <AnchorPane opacity="0.86" prefHeight="57.0" prefWidth="604.0" style="-fx-background-color: #232f46;"
+                        BorderPane.alignment="CENTER">
+                <Text fill="#6599dd" layoutX="8.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="StatsRetrieve isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc."
+                      wrappingWidth="589.0"/>
             </AnchorPane>
         </AnchorPane>
     </bottom>
