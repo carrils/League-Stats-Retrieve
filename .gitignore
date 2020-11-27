@@ -27,3 +27,6 @@ hs_err_pid*
 
 #credentials.xml
 /OPGG-Winrate-Scraper/src/Credentials.xml
+Credentials.xml
+/Credentials.xml
+*Credentials.xml*
